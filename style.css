@@ -1,0 +1,56 @@
+/* Shared style for grinoir.github.io: plain pages with a VGA-era accent. */
+:root {
+  --bg: #f6f4ee;
+  --panel: #ffffff;
+  --text: #1d1f24;
+  --muted: #5b6070;
+  --rule: #d9d5ca;
+  --accent: #1f3fbf;      /* VGA blue */
+  --yellow: #e6c800;
+  --red: #d8433f;
+  --blue: #4a5cf0;
+  --mono: "IBM Plex Mono", "Cascadia Mono", "DejaVu Sans Mono", ui-monospace, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101216;
+    --panel: #171a20;
+    --text: #e6e6e1;
+    --muted: #9aa0ad;
+    --rule: #2a2f38;
+    --accent: #7f93ff;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 var(--sans);
+}
+main { max-width: 46rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+header.site { display: flex; align-items: center; gap: .75rem; margin-bottom: 2.5rem; }
+header.site a { color: var(--text); text-decoration: none; font: 600 1rem var(--mono); }
+.bars { display: inline-grid; gap: 3px; }
+.bars span { display: block; width: 18px; height: 4px; }
+.bars span:nth-child(1) { background: var(--yellow); }
+.bars span:nth-child(2) { background: var(--red); }
+.bars span:nth-child(3) { background: var(--blue); }
+h1 { font: 700 2rem/1.2 var(--mono); margin: 0 0 .5rem; letter-spacing: -.01em; }
+h2 { font: 600 1.15rem var(--mono); margin: 2.5rem 0 .75rem; }
+p.lede { color: var(--muted); font-size: 1.1rem; margin-top: 0; }
+a { color: var(--accent); }
+ul.projects { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+ul.projects li {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+}
+ul.projects h3 { margin: 0 0 .25rem; font: 600 1.05rem var(--mono); }
+ul.projects p { margin: 0; color: var(--muted); }
+ul.projects .links { margin-top: .5rem; font-size: .95rem; }
+code { font-family: var(--mono); font-size: .92em; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
